@@ -12,7 +12,7 @@ module.exports.create = (event, context, callback) => {
     callback(null, {
       statusCode: 400,
       headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({type: typeof data, data: data, message: 'Couldn\'t create campaign.'}),
+      body: JSON.stringify({message: 'Couldn\'t create campaign.'}),
     });
     return;
   }
