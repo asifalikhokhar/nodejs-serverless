@@ -1,0 +1,52 @@
+
+service: my-service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/*"
+
+# package:
+#   exclude:
+#     - ./**
+#   include:
+#     - ./src/createCampaign.js
+
+functions:
+
+  createCampaign:
+    handler: src/createCampaign.create
+    events:
+    - http:
+        path: campaigns/create
+        method: post
+
+  listing:
+    handler: src/campaigns.list
+    events:
+    - http:
+        path: campaigns/get
+        method: get
+
+  getByUser:
+    handler: src/campaignsbyuser.getByUser
+    events:
+    - http:
+        path: campaigns/getByUser/{id}
+        method: get
+  
+  getSorted:
+    handler: src/campaignssorted.getSorted
+    events:
+    - http:
+        path: campaigns/getSorted/{id}
+        method: get

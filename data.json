@@ -1,0 +1,12 @@
+{
+    "pathParameters": {"id": "1"},
+    "body" : {
+        "Name": "Xmas Campaign",
+        "UserId": 3,
+        "ScheduledTo": 1533033536000,
+        "Status": "Sent",
+        "SendTo": "list22",
+        "Content": "Merry Xmas"
+        
+      }
+}
