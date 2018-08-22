@@ -1,3 +1,5 @@
+A simple and easy to understand example of Nodejs serverless programming
+
 # my-service
 my-service
 endpoints:
