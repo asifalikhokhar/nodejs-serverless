@@ -1,7 +1,7 @@
 A simple and easy to understand example of Nodejs serverless programming
 
-# my-service
-my-service
+# nodejs-serverless example
+nodejs-serverless example
 endpoints:
   POST - https://wsfwc8n2s6.execute-api.us-east-1.amazonaws.com/dev/campaigns/create
   Required body => {"Name": "Xmas Campaign","UserId": 4,"ScheduledTo": 1533033536000,"Status": "Sent","SendTo": "list22","Content": "Merry Xmas", "id" : "b82e9430-94b2-11e8-b7b9-a33191f69012"}
